@@ -18,6 +18,7 @@ class LoginController extends Controller
         {
             throw new InvalidAuthenticationException();
         }
+        $request->session()->regenerate();
         return new UserResource(auth()->user());
     }
-}
+}   
